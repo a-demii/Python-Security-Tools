@@ -1,17 +1,22 @@
 import socket
 
-# This is the "target" we want to check
 target = "google.com"
-port = 80
 
-communication_tool = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-communication_tool.settimeout(2)
+ports = [21, 22, 80, 443, 8080]
 
-result = communication_tool.connect_ex((target, port))
+print(f"scanning {target}...")
 
-if result == 0:
-    print("The door is OPEN!")
-else:
-    print("The door is CLOSED.")
+for p in ports:
+    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client.settimeout(1)
 
-communication_tool.close()
+    result = client.connect_ex((target, p))
+
+    if result == 0:
+        print(f"Port {p}: OPEN")
+    else:
+        print(f"Port {p}: CLOSED")
+    
+    client.close()
+
+print("Scan complete.")
