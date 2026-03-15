@@ -1,6 +1,6 @@
 import socket
 
-target = "google.com"
+target = input("Enter the target IP or URL to scan: ")
 
 ports = [21, 22, 80, 443, 8080]
 
