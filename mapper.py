@@ -1,7 +1,11 @@
 VULN_DB = {
     "OpenSSH_6.6.1p1": "HIGH - This version is old and has known security leaks!",
     "OpenSSH_7.2": "MEDIUM - Outdated, update recommended.",
-    "Apache/2.4": "LOW - Standard version, but keep an eye on it."
+    "Apache/2.4": "LOW - Standard version, but keep an eye on it.",
+    "vsFTPd 2.3.4": "CRITICAL - This version contains a famous backdoor (CVE-2011-2523)!",
+    "Microsoft-IIS/7.5": "MEDIUM - Older Windows Server version. Check for MS15-034.",
+    "SSH-2.0-OpenSSH_8.2": "LOW - Modern version. Just ensure it is patched.",
+    "nginx/1.10.3": "MEDIUM - Outdated version of Nginx. Check for memory leak bugs."
 }
 
 def check_vulnerabilities():
