@@ -16,8 +16,8 @@ try:
     print("\n--- BANNER FOUND ---")
     print(result)
 
-    with open("banners.txt", "a") as file:
-        file.write(f"Target: {target} | Banner: {result}\n")
+    with open("banners.txt", "w") as file:
+        file.write(f"{target}:{result}\n")
 
     print("--- Success! Info saved to banners.txt ---\n")   
 
